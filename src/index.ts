@@ -1,3 +1,3 @@
 import { testFnc } from './test';
 
-testFnc();
+testFnc('how are you');
