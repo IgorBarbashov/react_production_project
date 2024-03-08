@@ -1,11 +1,29 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+    // Подсвечивает все места где не указан тип
     "noImplicitAny": true,
-    "module": "es6",
+    // Определяет какую моджульную систему будет использовать, обычно ESNext, EcmaScript6, на бэке можео CommonJS
+    "module": "ESNext",
+    // В какую спецификацию компилируем: для поддержки большинства браузеров
     "target": "es5",
+    // Позволяет использовать JSX
     "jsx": "react",
+    // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
-    "moduleResolution": "node"
+    // Какие импорты будут - 99% это node
+    "moduleResolution": "node",
+    // Если какая-либо библиотека не имеет default import,
+    // лоадеры вроде ts-loader или babel-loader автоматически создают их
+    // вместо такого импорта
+    "allowSyntheticDefaultImports": true,
+    // esModuleInterop позволяет работать с пакетами, которые используют
+    // common js как с обычными пакета с помощью import (require() module.export) = common js
+    "esModuleInterop": true,
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
   }
 }
