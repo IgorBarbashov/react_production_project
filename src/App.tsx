@@ -1,5 +1,11 @@
 import { Counter } from "./Components/Counter";
+import './index.scss';
 
 export const App = () => {
-    return <Counter />;
+    return (
+        <div className='app'>
+            dsflkjgdflkgjsldkgf
+            <Counter/>
+        </div>
+    );
 };

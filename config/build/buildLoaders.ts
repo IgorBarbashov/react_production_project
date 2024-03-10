@@ -13,7 +13,12 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule [] {
             {
                 loader: "css-loader",
                 options: {
-                    modules: true,
+                    modules: {
+                        // Если использхуем стандартное наименование файлов css модулей '*.modules.scss'
+                        auto: true,
+                        // Если используем кастомное наименование файлов css модулей
+                        // auto: (customPath: string) => customPath.endsWith('.custom-modules-name.scss'),
+                    },
                 },
             },
             // Compiles Sass to CSS
