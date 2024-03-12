@@ -1,6 +1,6 @@
 import {Suspense, useContext} from "react";
 import {Link, Route, Routes} from "react-router-dom";
-import {THEME, ThemeContext} from "./theme/ThemeContext";
+import {LOCAL_STORAGE_THEME_KEY, THEME, ThemeContext} from "./theme/ThemeContext";
 import {MainPage} from "./pages/MainPage";
 import {AboutPage} from "./pages/AboutPage";
 import './styles/index.scss';
@@ -8,7 +8,11 @@ import './styles/index.scss';
 export const App = () => {
     const { theme, setTheme }  = useContext(ThemeContext);
 
-    const toggleTheme = () => setTheme(theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT);
+    const toggleTheme = () => {
+        const newTheme = theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT;
+        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+        setTheme(newTheme);
+    };
 
     return (
         <div className={`app ${theme}`}>
