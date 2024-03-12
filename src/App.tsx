@@ -1,16 +1,12 @@
-import { Suspense, useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import { MainPage } from "./pages/MainPage";
-import { AboutPage } from "./pages/AboutPage";
+import {Suspense, useContext} from "react";
+import {Link, Route, Routes} from "react-router-dom";
+import {THEME, ThemeContext} from "./theme/ThemeContext";
+import {MainPage} from "./pages/MainPage";
+import {AboutPage} from "./pages/AboutPage";
 import './styles/index.scss';
 
-export enum THEME {
-    LIGHT = 'light',
-    DARK = 'dark',
-}
-
 export const App = () => {
-    const [theme, setTheme] = useState<THEME>(THEME.LIGHT);
+    const { theme, setTheme }  = useContext(ThemeContext);
 
     const toggleTheme = () => setTheme(theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT);
 
