@@ -4,6 +4,6 @@ export const MainPageLazy = lazy(() => new Promise(resolve => {
     setTimeout(() => {
         // @ts-ignore
         // only for education example
-        resolve(import('./MainPage'));
+        resolve(import(/* webpackChunkName: "MainPage"*/'./MainPage'));
     }, 1500);
 }));

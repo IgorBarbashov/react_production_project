@@ -4,6 +4,6 @@ export const AboutPageLazy = lazy(() => new Promise(resolve => {
     setTimeout(() => {
         // @ts-ignore
         // only for education example
-        resolve(import('./AboutPage'));
+        resolve(import(/* webpackChunkName: "AboutPage"*/'./AboutPage'));
     }, 1500);
 }));
