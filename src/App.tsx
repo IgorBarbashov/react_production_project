@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { MainPage } from "./pages/MainPage";
 import { AboutPage } from "./pages/AboutPage";
-import './index.scss';
+import './styles/index.scss';
 
 export const App = () => {
     return (
