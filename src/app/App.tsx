@@ -1,13 +1,13 @@
-import {Suspense, useContext} from "react";
+import {Suspense} from "react";
 import {Link, Route, Routes} from "react-router-dom";
-import {MainPage} from "../pages/MainPage";
-import {AboutPage} from "../pages/AboutPage";
-import {useTheme} from "../shared/contexts";
+import {MainPage} from "pages/MainPage";
+import {AboutPage} from "pages/AboutPage";
+import {useTheme} from "shared/contexts";
 import './styles/index.scss';
-import {classNames} from "../helpers/classNames/classNames";
+import {classNames} from "helpers/classNames/classNames";
 
 export const App = () => {
-    const { theme, toggleTheme } = useTheme();
+    const {theme, toggleTheme} = useTheme();
 
     return (
         <div className={classNames('app', [theme])}>
@@ -16,8 +16,8 @@ export const App = () => {
             <Link to='/about'>AboutPage</Link>
             <Suspense fallback={'Loading...'}>
                 <Routes>
-                    <Route path='/' element={<MainPage />}/>
-                    <Route path='/about' element={<AboutPage />}/>
+                    <Route path='/' element={<MainPage/>}/>
+                    <Route path='/about' element={<AboutPage/>}/>
                 </Routes>
             </Suspense>
         </div>
