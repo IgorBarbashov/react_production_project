@@ -1,6 +1,6 @@
 import { render } from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "./theme/ThemeProvider";
+import { ThemeProvider } from "./shared/contexts";
 import { App } from "./app/App";
 
 render(

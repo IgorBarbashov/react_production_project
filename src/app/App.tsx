@@ -2,7 +2,7 @@ import {Suspense, useContext} from "react";
 import {Link, Route, Routes} from "react-router-dom";
 import {MainPage} from "../pages/MainPage";
 import {AboutPage} from "../pages/AboutPage";
-import {useTheme} from "../theme/useTheme";
+import {useTheme} from "../shared/contexts";
 import './styles/index.scss';
 import {classNames} from "../helpers/classNames/classNames";
 
