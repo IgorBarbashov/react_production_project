@@ -1,5 +1,5 @@
-- [Webpack. Code-splitting. Css-modules. Введение в архитектуру](doc\01.md)
-- Router. App Layout. I18n. Eslint, stylelint. Jest
+- [Webpack. Code-splitting. Css-modules. Введение в архитектуру](doc/01.md)
+- [Router. App Layout. I18n. Eslint, stylelint. Jest](doc/02.md)
 - Storybook. RTL. Bundle analyzer. Error boundary. UI tests
 - Работа с данными. Redux. Модальное окно. Авторизация. pre commit hooks (husky). Работа с текстом
 - Асинк редюссеры. Тесты. Инстанс API. TS strict mode. Модуль профиля

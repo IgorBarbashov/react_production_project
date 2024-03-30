@@ -1,10 +1,9 @@
-import {Suspense} from "react";
-import {Link, Route, Routes} from "react-router-dom";
-import {MainPage} from "pages/MainPage";
-import {AboutPage} from "pages/AboutPage";
-import {useTheme} from "shared/contexts";
-import './styles/index.scss';
+import {Link} from "react-router-dom";
+import {AppRouter} from "shared/router";
+import {useTheme} from "shared/theme";
 import {classNames} from "shared/lib";
+import {routerConfig} from './configs';
+import './styles/index.scss';
 
 export const App = () => {
     const {theme, toggleTheme} = useTheme();
@@ -14,12 +13,8 @@ export const App = () => {
             <button onClick={toggleTheme}>Toggle</button>
             <Link to='/'>MainPage</Link>
             <Link to='/about'>AboutPage</Link>
-            <Suspense fallback={'Loading...'}>
-                <Routes>
-                    <Route path='/' element={<MainPage/>}/>
-                    <Route path='/about' element={<AboutPage/>}/>
-                </Routes>
-            </Suspense>
+
+            <AppRouter routerConfig={routerConfig}/>
         </div>
     );
 };
