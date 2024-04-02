@@ -1,3 +1,4 @@
+import {Suspense} from "react";
 import {Navbar} from "widgets/Navbar";
 import {Sidebar} from "widgets/Sidebar";
 import {AppRouter} from "shared/router";
@@ -11,11 +12,13 @@ export const App = () => {
 
     return (
         <div className={classNames('app', [theme])}>
-            <Navbar/>
-            <div className='content-page'>
-                <Sidebar/>
-                <AppRouter routerConfig={routerConfig}/>
-            </div>
+            <Suspense fallback={<div>Loading translations...</div>}>
+                <Navbar/>
+                <div className='content-page'>
+                    <Sidebar/>
+                    <AppRouter routerConfig={routerConfig}/>
+                </div>
+            </Suspense>
         </div>
     );
 };
