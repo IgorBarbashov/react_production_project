@@ -18,6 +18,6 @@ export function classNames(cls: string, mods?: Mods | string[], additional?: str
         ...Object.entries(mods)
             .filter(([_, value]) => Boolean(value))
             .map(([key]) => key),
-        ...(additional || []),
+        ...(additional || []).filter(Boolean),
     ].join(' ');
 };
