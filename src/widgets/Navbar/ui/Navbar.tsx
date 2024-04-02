@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {Link} from "react-router-dom";
+import {AppLink} from "shared/ui";
 import {classNames} from "shared/lib";
 import {RoutesPath} from "shared/router";
 import cls from './Navbar.module.scss';
@@ -12,8 +12,8 @@ export const Navbar: FC<INavbarProps> = ({className}) => {
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
             <div className={cls.links}>
-                <Link to={RoutesPath.main} className={cls.mainLink}>MainPage</Link>
-                <Link to={RoutesPath.about}>AboutPage</Link>
+                <AppLink to={RoutesPath.main} className={cls.mainLink}>MainPage</AppLink>
+                <AppLink to={RoutesPath.about}>AboutPage</AppLink>
             </div>
         </div>
     );
