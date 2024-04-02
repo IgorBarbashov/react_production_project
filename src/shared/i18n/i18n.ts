@@ -8,11 +8,15 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        fallbackLng: 'ru',
+        lng: 'ru', // default language
+        fallbackLng: 'ru', // language used if no translation found
         debug: __IS_DEV__,
 
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
+        },
+        backend: {
+            loadPath: '/locales/{{lng}}/{{ns}}.json',
         }
     });
 
