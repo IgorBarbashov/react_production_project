@@ -1,5 +1,6 @@
 import {RuleSetRule} from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import ReactRefreshTypeScript from 'react-refresh-typescript';
 import {BuildOptions} from "./types/config";
 
 export function buildLoaders({isDev}: BuildOptions): RuleSetRule [] {
@@ -42,7 +43,15 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule [] {
     // Если не используем ts, а нативный js, нам нужен babel-loader для поддержки jsx
     const typescriptLoader = {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: [{
+            loader: 'ts-loader',
+            options: {
+                getCustomTransformers: () => ({
+                    before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
+                }),
+                transpileOnly: isDev,
+            }
+        }],
         exclude: /node_modules/,
     };
 
