@@ -23,7 +23,7 @@ export const Sidebar: FC<ISidebarProps> = (props): JSX.Element => {
             </button>
             <div className={cls.switchers}>
                 <ThemeSwitcher/>
-                <LanguageSwitcher/>
+                <LanguageSwitcher className={cls.languageSwitcher}/>
             </div>
         </div>
     );
