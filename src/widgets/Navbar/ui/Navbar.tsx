@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
+import {ThemeSwitcher} from "features/ThemeSwitcher";
 import {AppLink} from "shared/ui";
 import {classNames} from "shared/lib";
 import {RoutesPath} from "shared/router";
