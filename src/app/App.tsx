@@ -1,5 +1,4 @@
 import {Navbar} from "widgets/Navbar";
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
 import {AppRouter} from "shared/router";
 import {useTheme} from "shared/theme";
 import {classNames} from "shared/lib";
@@ -12,7 +11,6 @@ export const App = () => {
     return (
         <div className={classNames('app', [theme])}>
             <Navbar/>
-            <ThemeSwitcher/>
             <AppRouter routerConfig={routerConfig}/>
         </div>
     );
