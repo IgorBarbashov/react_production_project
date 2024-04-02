@@ -9,6 +9,11 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule [] {
         use: ['@svgr/webpack'],
     };
 
+    const assetsLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        type: 'asset/resource'
+    };
+
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -43,6 +48,7 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule [] {
 
     return [
         typescriptLoader,
+        assetsLoader,
         svgLoader,
         cssLoader,
     ];
