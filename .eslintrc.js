@@ -63,7 +63,10 @@ module.exports = {
             'code': 100,
             'ignoreComments': true
         }],
-        'linebreak-style': 'off'
+        'linebreak-style': 'off',
+        'i18next/no-literal-string': [2, {
+            'markupOnly': true
+        }]
     },
     'globals': {
         '__IS_DEV_': true
