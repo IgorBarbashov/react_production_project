@@ -62,7 +62,8 @@ module.exports = {
         'max-len': [2, {
             'code': 100,
             'ignoreComments': true
-        }]
+        }],
+        'linebreak-style': 'off'
     },
     'globals': {
         '__IS_DEV_': true
