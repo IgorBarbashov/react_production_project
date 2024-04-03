@@ -28,6 +28,7 @@ const config: Config = {
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
+    modulePaths: ['<rootDir>src/'],
 
     // All imported modules in your tests should be mocked automatically
     // automock: false,
