@@ -4,8 +4,12 @@ module.exports = {
         "es2021": true
     },
     "extends": [
-        "standard-with-typescript",
-        "plugin:react/recommended"
+        "airbnb",
+        "airbnb-typescript",
+        "plugin:react/recommended",
+        "plugin:n/recommended",
+        "plugin:promise/recommended",
+        "plugin:i18next/recommended"
     ],
     "overrides": [
         {
@@ -22,11 +26,15 @@ module.exports = {
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
-        "react"
+        "react",
+        "promise",
+        "i18next"
     ],
     "rules": {
+        "n/exports-style": ["error", "module.exports"]
     }
 }
