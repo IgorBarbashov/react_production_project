@@ -1,5 +1,5 @@
-import {FC, ButtonHTMLAttributes} from "react";
-import {classNames} from "shared/lib";
+import { FC, ButtonHTMLAttributes } from 'react';
+import { classNames } from 'shared/lib';
 import cls from './Button.module.scss';
 
 type IButtonVariant = 'clear';
@@ -19,6 +19,7 @@ export const Button: FC<IButtonProps> = (props): JSX.Element => {
 
     return (
         <button
+            type="button"
             className={classNames(cls.button, {}, [className, cls[variant]])}
             {...restProps}
         >

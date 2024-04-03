@@ -1,31 +1,30 @@
-import {RuleSetRule} from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { RuleSetRule } from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshTypeScript from 'react-refresh-typescript';
-import {BuildOptions} from "./types/config";
+import { BuildOptions } from './types/config';
 
-export function buildLoaders({isDev}: BuildOptions): RuleSetRule [] {
-
+export function buildLoaders({ isDev }: BuildOptions): RuleSetRule [] {
     const babelLoader = {
         test: /\.(js|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
                 plugins: [
                     [
-                        "i18next-extract",
+                        'i18next-extract',
                         {
                             locales: ['ru', 'en'],
-                            "nsSeparator": "~",
+                            nsSeparator: '~',
                             keyAsDefaultValue: false,
                             saveMissing: true,
                             outputPath: 'public/locales/{{locale}}/{{ns}}.json',
-                        }
-                    ]
+                        },
+                    ],
                 ],
-            }
-        }
+            },
+        },
     };
 
     const svgLoader = {
@@ -35,7 +34,7 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule [] {
 
     const assetsLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-        type: 'asset/resource'
+        type: 'asset/resource',
     };
 
     const cssLoader = {
@@ -45,7 +44,7 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule [] {
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             // Translates CSS into CommonJS
             {
-                loader: "css-loader",
+                loader: 'css-loader',
                 options: {
                     modules: {
                         // Если используем стандартное наименование файлов css модулей '*.modules.scss'
@@ -53,13 +52,13 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule [] {
                         // Если используем кастомное наименование файлов css модулей
                         // auto: (customPath: string) => customPath.endsWith('.custom-modules-name.scss'),
                         localIdentName: isDev
-                            ? "[path][name]__[local]--[hash:base64:5]"
-                            : "[hash:base64:8]",
+                            ? '[path][name]__[local]--[hash:base64:5]'
+                            : '[hash:base64:8]',
                     },
                 },
             },
             // Compiles Sass to CSS
-            "sass-loader",
+            'sass-loader',
         ],
     };
 
@@ -73,7 +72,7 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule [] {
                     before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
                 }),
                 transpileOnly: isDev,
-            }
+            },
         }],
         exclude: /node_modules/,
     };
@@ -85,4 +84,4 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule [] {
         svgLoader,
         cssLoader,
     ];
-};
+}

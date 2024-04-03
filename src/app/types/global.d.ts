@@ -7,15 +7,16 @@ declare module '*.scss' {
     export = classNames;
 }
 
-declare module "*.png";
-declare module "*.jpe";
-declare module "*.jpeg";
-declare module "*.gif";
-declare module "*.woff2";
-declare module "*.woff";
+declare module '*.png';
+declare module '*.jpe';
+declare module '*.jpeg';
+declare module '*.gif';
+declare module '*.woff2';
+declare module '*.woff';
 
-declare module "*.svg" {
-    import {FC, SVGProps} from "react";
+declare module '*.svg' {
+    import { FC, SVGProps } from 'react';
+
     const content: FC<SVGProps<SVGElement>>;
     export default content;
 }

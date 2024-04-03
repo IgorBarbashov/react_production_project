@@ -1,8 +1,8 @@
-import {useTranslation} from "react-i18next";
-import {TRANSLATION_NAMESPACES} from "shared/i18n/i18nConfig";
+import { useTranslation } from 'react-i18next';
+import { TRANSLATION_NAMESPACES } from 'shared/i18n/i18nConfig';
 
 export const MainPage = () => {
-    const {t} = useTranslation(TRANSLATION_NAMESPACES.MAIN);
+    const { t } = useTranslation(TRANSLATION_NAMESPACES.MAIN);
 
     return (
         <div>
