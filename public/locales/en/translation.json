@@ -1,6 +1,7 @@
 {
-  "About page": "",
+  "About page": "About us",
   "Language": "Русский",
-  "Main page": "",
+  "Main page": "Main page",
+  "Toggle": "Toggle",
   "Welcome to React": "Welcome to React"
 }

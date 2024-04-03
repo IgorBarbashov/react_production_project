@@ -40,20 +40,31 @@ module.exports = {
         'react/jsx-indent-props': [2, 4],
         'react/react-in-jsx-scope': 'off',
         'import/prefer-default-export': 'off',
-        // '@typescript-eslint/no-unused-vars': 'warn',
         'react/require-default-props': 'off',
-        'react/jsx-props-no-spreading': [2, { 'html': 'ignore' }],
+        'react/jsx-props-no-spreading': [1, {
+            'html': 'ignore',
+            'exceptions': ['Link']
+        }],
         'react/function-component-definition': 'off',
-
-
-
-
-
-        // 'n/no-missing-import': '',
-
-
+        'n/no-missing-import': 'off',
         'n/exports-style': ['error', 'module.exports'],
+        'import/no-extraneous-dependencies': [2, {
+            "devDependencies": true
+        }],
+        'n/no-unpublished-import': 'off',
+        'no-underscore-dangle': 'off',
+        '@typescript-eslint/naming-convention': [2, {
+            'selector': 'variable',
+            'format': ['camelCase', 'PascalCase', 'UPPER_CASE'],
+            'leadingUnderscore': 'allowDouble',
+            'trailingUnderscore': 'allowDouble'
+        }],
+        'max-len': [2, {
+            'code': 100,
+            'ignoreComments': true
+        }]
+    },
+    'globals': {
+        '__IS_DEV_': true
     }
 }
-// 'indent': [2, 4],
-// 'import/no-unresolved': 'off',

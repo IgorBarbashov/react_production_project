@@ -1,6 +1,7 @@
 {
-  "About page": "",
-  "Language": "Английский",
-  "Main page": "",
+  "About page": "О сайте",
+  "Language": "English",
+  "Main page": "Главная страница",
+  "Toggle": "Переключить",
   "Welcome to React": "Добро пожаловать в React"
 }
