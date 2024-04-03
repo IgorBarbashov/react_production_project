@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { AppLink } from 'shared/ui';
 import { classNames } from 'shared/lib';
 import { RoutesPath } from 'shared/router';
-import { TRANSLATION_NAMESPACES } from 'shared/i18n/i18nConfig';
 import cls from './Navbar.module.scss';
 
 interface INavbarProps {
@@ -11,7 +10,7 @@ interface INavbarProps {
 }
 
 export const Navbar: FC<INavbarProps> = ({ className }) => {
-    const { t } = useTranslation([TRANSLATION_NAMESPACES.ABOUT, TRANSLATION_NAMESPACES.MAIN]);
+    const { t } = useTranslation();
 
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
